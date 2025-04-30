@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="140dp"
+    android:layout_height="200dp"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/fondo_rosa">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <!-- Imagen circular de la receta -->
+        <ImageView
+            android:id="@+id/recipeImage"
+            android:layout_width="110dp"
+            android:layout_height="103dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/circle_background"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/comida_fondo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Nombre de la receta -->
+
+        <!-- Botón "Ver Receta" -->
+        <TextView
+            android:id="@+id/recipeName"
+            android:layout_width="128dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="0dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="Tostadas de frijoles negros y aguacate"
+            android:textColor="@color/blanco"
+            android:textSize="8sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recipeImage" />
+
+        <Button
+            android:id="@+id/btnViewRecipe"
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#890620"
+            android:text="Ver Receta"
+            android:textColor="@color/blanco"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recipeName"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

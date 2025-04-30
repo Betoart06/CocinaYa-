@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_rosa"
+    tools:context=".AuthActivity">
+
+    <!-- Fondo de la imagen -->
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:scaleType="centerCrop"
+        android:src="@drawable/comida_fondo" />
+
+    <!-- Logo de la aplicación -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/logo_cocina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- CardView para el formulario -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        app:cardBackgroundColor="@color/fondo_login"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="531dp"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Contenedor de botones Ingresar/Registrar -->
+            <FrameLayout
+                android:id="@+id/toggleContainer"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/toggle_inactive"
+                android:padding="5dp">
+
+                <!-- Indicador debajo de los botones -->
+                <View
+                    android:id="@+id/toggleIndicator"
+                    android:layout_width="130dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start"
+                    android:background="@drawable/toggle_active"
+                    android:layout_margin="2dp" />
+
+                <!-- Botones encima del indicador -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnLogin"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:text="Ingresar"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blanco"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnRegister"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:text="Registrar"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blanco"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Contenedor de inicio de sesión -->
+            <LinearLayout
+                android:id="@+id/loginContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="visible">
+
+                <!-- Título de bienvenida -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="Bienvenido a Cocina Ya"
+                    android:textColor="@color/blanco"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Correo"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="48dp"
+                    android:textColorHint="@color/blanco" />
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Contraseña"
+                    android:inputType="textPassword"
+                    android:minHeight="48dp"
+                    android:textColorHint="@color/blanco" />
+
+                <Button
+                    android:id="@+id/btnLoginAction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#890620"
+                    android:minHeight="48dp"
+                    android:text="Ingresar"
+                    android:textColor="@color/blanco" />
+
+                <TextView
+                    android:id="@+id/tvForgotPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="onForgotPasswordClick"
+                    android:padding="12dp"
+                    android:text="¿Olvidaste la contraseña?"
+                    android:textColor="@color/blanco"
+                    android:textSize="14sp"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <!-- Contenedor de registro -->
+            <LinearLayout
+                android:id="@+id/registerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/etUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="Nombre de Usuario"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:textColorHint="@color/blanco" />
+
+                <EditText
+                    android:id="@+id/etEmailRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="Correo"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="48dp"
+                    android:textColorHint="@color/blanco" />
+
+                <EditText
+                    android:id="@+id/etPasswordRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="Contraseña"
+                    android:inputType="textPassword"
+                    android:minHeight="48dp"
+                    android:textColorHint="@color/blanco" />
+
+                <EditText
+                    android:id="@+id/etConfirmPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="Confirmar Contraseña"
+                    android:inputType="textPassword"
+                    android:minHeight="48dp"
+                    android:textColorHint="@color/blanco" />
+
+                <Button
+                    android:id="@+id/btnRegisterAction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#890620"
+                    android:minHeight="60dp"
+                    android:text="Registrar"
+                    android:textColor="@color/blanco" />
+            </LinearLayout>
+
+            <!-- Contenedor para ingresar el correo -->
+            <LinearLayout
+                android:id="@+id/forgotPasswordContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ingresa tu correo"
+                    android:textColor="@color/blanco"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etForgotEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Correo"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="@color/blanco" />
+
+                <Button
+                    android:id="@+id/btnSendCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enviar código"
+                    android:backgroundTint="#890620"
+                    android:textColor="@color/blanco" />
+            </LinearLayout>
+
+            <!-- Contenedor para ingresar el código -->
+            <LinearLayout
+                android:id="@+id/codeVerificationContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ingresa tu código"
+                    android:textColor="@color/blanco"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Código"
+                    android:inputType="text"
+                    android:textColorHint="@color/blanco" />
+
+                <Button
+                    android:id="@+id/btnVerifyCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cambiar contraseña"
+                    android:backgroundTint="#890620"
+                    android:textColor="@color/blanco" />
+            </LinearLayout>
+
+            <!-- Contenedor para cambiar la contraseña -->
+            <LinearLayout
+                android:id="@+id/changePasswordContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <!-- Campo oculto para almacenar el código verificado -->
+                <EditText
+                    android:id="@+id/etVerifiedCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:inputType="text" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Establece tu nueva contraseña"
+                    android:textColor="@color/blanco"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp" />
+
+                <!-- Removemos el campo etCurrentPassword ya que no es necesario
+                     para el flujo de recuperación de contraseña -->
+
+                <EditText
+                    android:id="@+id/etNewPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nueva Contraseña"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/blanco" />
+
+                <EditText
+                    android:id="@+id/etConfirmNewPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Confirmar Nueva Contraseña"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/blanco" />
+
+                <Button
+                    android:id="@+id/btnSavePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Guardar"
+                    android:backgroundTint="#890620"
+                    android:textColor="@color/blanco" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

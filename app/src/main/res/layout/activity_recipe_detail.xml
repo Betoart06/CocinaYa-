@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rounded_rectangle_background"
+    tools:context=".RecipeDetailActivity">
+
+    <!-- Barra superior con botones de cierre, navegación y favorito -->
+    <LinearLayout
+        android:id="@+id/topButtonsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Botón X para cerrar -->
+        <Button
+            android:id="@+id/btnClose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="X"
+            android:textColor="@color/blanco"
+            android:background="@android:drawable/ic_delete"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <!-- Botones de navegación Receta/Ingredientes en el centro -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnReceta"
+                android:layout_width="128dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="4dp"
+                android:backgroundTint="@color/fondo_rosa"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="Receta"
+                android:textColor="@color/darkRed"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnIngredientes"
+                android:layout_width="128dp"
+                android:layout_height="40dp"
+                android:text="Ingredientes"
+                android:backgroundTint="@color/fondo_rosa"
+                android:textColor="@color/darkRed"
+                android:layout_marginStart="4dp"
+                android:textSize="12sp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"/>
+        </LinearLayout>
+
+        <!-- Botón de favorito -->
+        <Button
+            android:id="@+id/btnFavorite"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="★"
+            android:textColor="@color/blanco"
+            android:background="@android:drawable/btn_star"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+    <!-- Imagen de la receta -->
+    <ImageView
+        android:id="@+id/ivRecipeImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/rounded_rectangle_background"
+        app:layout_constraintTop_toBottomOf="@id/topButtonsContainer"
+        android:src="@drawable/comida_fondo"/>
+
+    <!-- Título de la receta -->
+    <TextView
+        android:id="@+id/tvRecipeTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Tostadas de frijoles negros y aguacate"
+        android:textColor="@color/blanco"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/ivRecipeImage"/>
+
+    <!-- Container para la vista de receta -->
+    <ScrollView
+        android:id="@+id/svRecetaContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tvRecipeTitle"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvRecetaLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Receta"
+                android:textColor="@color/blanco"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Container para los pasos de la receta -->
+            <LinearLayout
+                android:id="@+id/stepsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- Paso 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:text="1"
+                        android:textColor="@color/blanco"
+                        android:background="@drawable/circle_background"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_marginRight="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvRecetaPaso1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Calentar aceite en una sartén grande a fuego medio. Añadir el ajo, la anchoa, si se utiliza, y el pimiento rojo, y cocinar por 3-4 minutos."
+                        android:textColor="@color/blanco"/>
+                </LinearLayout>
+
+                <!-- Paso 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:text="2"
+                        android:textColor="@color/blanco"
+                        android:background="@drawable/circle_background"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_marginRight="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvRecetaPaso2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Añadir los tomates enteros con su jugo a la sartén, junto con la mezcla de hierbas. Sazonar con sal y pimienta al gusto. Aplastar los tomates para hacer una salsa y cocer a fuego lento durante 25 minutos, sin dejar de triturar los trozos de tomate más grandes."
+                        android:textColor="@color/blanco"/>
+                </LinearLayout>
+
+                <!-- Paso 3 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:text="3"
+                        android:textColor="@color/blanco"
+                        android:background="@drawable/circle_background"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_marginRight="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvRecetaPaso3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Retirar la albahaca, añadir el queso parmesano a la salsa y hacer seis huecos con una cuchara de madera. Poner un huevo en cada hueco y tapar la sartén. Cocer durante 2 a 3 minutos, o hasta que se cuajen las claras y salsear con queso y albahaca fresca."
+                        android:textColor="@color/blanco"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Container para la vista de ingredientes -->
+    <ScrollView
+        android:id="@+id/svIngredientesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tvRecipeTitle"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvIngredientesLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ingredientes"
+                android:textColor="@color/blanco"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <LinearLayout
+                android:id="@+id/ingredientsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tvIngrediente1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="- 6 huevos"
+                    android:textColor="@color/blanco"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvIngrediente2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="- Aceite de oliva"
+                    android:textColor="@color/blanco"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvIngrediente3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="- 2 dientes de ajo pelados y laminados"
+                    android:textColor="@color/blanco"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvIngrediente4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="- 3 filetes de anchoa picados (opcional)"
+                    android:textColor="@color/blanco"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvIngrediente5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="- 1 lata de tomate entero"
+                    android:textColor="@color/blanco"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvIngrediente6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="- Una cucharita de pimentón dulce o picante, según el gusto"
+                    android:textColor="@color/blanco"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvIngrediente7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="- 2 cucharadas de mantequilla"
+                    android:textColor="@color/blanco"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvIngrediente8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="- Queso parmesano"
+                    android:textColor="@color/blanco"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvIngrediente9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="- Hojas de albahaca"
+                    android:textColor="@color/blanco"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvIngrediente10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="- Sal y pimienta"
+                    android:textColor="@color/blanco"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

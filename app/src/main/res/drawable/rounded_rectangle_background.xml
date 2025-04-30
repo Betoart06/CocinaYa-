@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Bordes curvos -->
+    <corners android:radius="23dp" /> <!-- Ajusta el radio para más o menos curvatura -->
+
+    <!-- Color de fondo del contenedor -->
+    <solid android:color="@color/darkRed" />
+
+    <!-- Borde del contenedor (opcional) -->
+    <stroke
+        android:width="7dp"
+        android:color="@color/blanco" />
+</shape>

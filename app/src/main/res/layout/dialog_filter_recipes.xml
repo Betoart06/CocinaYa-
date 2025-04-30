@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/fondo_rosa">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Filtrar Recetas"
+            android:textColor="@color/blanco"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Sección de dificultad -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dificultad"
+            android:textColor="@color/blanco"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroupDifficulty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radioEasy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fácil"
+                android:textColor="@color/blanco"/>
+
+            <RadioButton
+                android:id="@+id/radioMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Media"
+                android:textColor="@color/blanco"/>
+
+            <RadioButton
+                android:id="@+id/radioHard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Difícil"
+                android:textColor="@color/blanco"/>
+        </RadioGroup>
+
+        <!-- Sección de tiempo de preparación -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tiempo de preparación"
+            android:textColor="@color/blanco"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroupTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radioTime15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&lt;15 minutos"
+                android:textColor="@color/blanco"/>
+
+            <RadioButton
+                android:id="@+id/radioTime30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&lt;30 minutos"
+                android:textColor="@color/blanco"/>
+
+            <RadioButton
+                android:id="@+id/radioTime60"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&lt;60 minutos"
+                android:textColor="@color/blanco"/>
+        </RadioGroup>
+
+        <!-- Sección de ingredientes -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingredientes"
+            android:textColor="@color/blanco"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:id="@+id/ingredientsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- Los CheckBox se añadirán dinámicamente -->
+        </LinearLayout>
+
+        <!-- Opciones adicionales -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Opciones adicionales"
+            android:textColor="@color/blanco"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <CheckBox
+            android:id="@+id/checkBoxFavorites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Solo favoritos"
+            android:textColor="@color/blanco"/>
+
+        <CheckBox
+            android:id="@+id/checkBoxVegetarian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vegetariano"
+            android:textColor="@color/blanco"/>
+
+        <CheckBox
+            android:id="@+id/checkBoxVegan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vegano"
+            android:textColor="@color/blanco"/>
+
+        <CheckBox
+            android:id="@+id/checkBoxGlutenFree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sin gluten"
+            android:textColor="@color/blanco"/>
+
+        <!-- Botones -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/btnResetFilters"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Resetear"
+                android:textColor="@color/blanco"
+                android:backgroundTint="@color/darkRed"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnCancelFilters"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Cancelar"
+                android:textColor="@color/blanco"
+                android:backgroundTint="@color/darkRed"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnApplyFilters"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Aplicar"
+                android:textColor="@color/blanco"
+                android:backgroundTint="@color/darkRed"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

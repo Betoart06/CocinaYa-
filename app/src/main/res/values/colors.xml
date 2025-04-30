@@ -1,0 +1,9 @@
+<resources>
+    <color name="darkRed">#8B0000</color>
+    <color name="textBrown">#4E342E</color>
+    <color name="fondo_rosa">#DA9F93</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="transparente_negro">#80000000</color>
+    <color name= "fondo_login">#B6465F</color>
+</resources>
+

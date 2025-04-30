@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="@color/darkRed">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Texto de confirmación -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="¿Estas seguro de salir?"
+            android:textColor="@color/blanco"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Botón "Continuar" -->
+        <Button
+            android:id="@+id/btnContinuar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Continuar"
+            android:textColor="@color/darkRed"
+            android:backgroundTint="@color/fondo_rosa"
+            android:textAllCaps="false"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Botón "Salir" -->
+        <Button
+            android:id="@+id/btnSalir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salir"
+            android:textColor="@color/darkRed"
+            android:backgroundTint="@color/fondo_rosa"
+            android:textAllCaps="false"
+            android:padding="12dp"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

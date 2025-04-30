@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_rosa"
+    tools:context=".HomeActivity">
+
+    <!-- Fondo de la imagen -->
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:scaleType="centerCrop"
+        android:src="@drawable/comida_fondo" />
+
+    <!-- Logo de la aplicación -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="173dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/logo_cocina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- CardView para el contenido principal -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        app:cardBackgroundColor="@color/fondo_login"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Contenedor para el mensaje de bienvenida y la foto de perfil -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- Foto de perfil circular -->
+                <TextView
+                    android:id="@+id/profileInitial"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/circle_background"
+                    android:gravity="center"
+                    android:text="P"
+                    android:textColor="@color/blanco"
+                    android:textSize="24sp" />
+
+                <!-- Mensaje de bienvenida -->
+                <TextView
+                    android:id="@+id/welcomeMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hola (Nombre del usuario)"
+                    android:textColor="@color/blanco"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <!-- Contenedor de botones Recetas/Favoritos/Tus recetas -->
+            <FrameLayout
+                android:id="@+id/toggleContainer"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/toggle_background"
+                android:padding="2dp">
+
+                <!-- Indicador móvil -->
+                <View
+                    android:id="@+id/toggleIndicator"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/toggle_active" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <!-- Botón de Recetas -->
+                    <Button
+                        android:id="@+id/btnRecipes"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="Recetas"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blanco"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <!-- Botón de Favoritos -->
+                    <Button
+                        android:id="@+id/btnFavorites"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="Favoritos"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blanco"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <!-- Botón de Tus recetas -->
+                    <Button
+                        android:id="@+id/btnYourRecipes"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="Tus recetas"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blanco"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Contenedor para el fragmento de favoritos -->
+            <FrameLayout
+                android:id="@+id/fragmentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+            <!-- Incluir el layout container_recipes -->
+            <include
+                android:id="@+id/containerRecipes"
+                layout="@layout/container_recipes"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1" />
+
+            <!-- Incluir el layout container_favorites -->
+            <include
+                android:id="@+id/containerFavorites"
+                layout="@layout/container_favorites"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+            <!-- Incluir el layout container_your_recipes -->
+            <include
+                android:id="@+id/containerYourRecipes"
+                layout="@layout/container_your_recipes"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

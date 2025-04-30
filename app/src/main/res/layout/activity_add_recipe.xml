@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rounded_rectangle_background"
+    tools:context=".AddRecipeActivity">
+
+    <!-- Botón X para cerrar -->
+    <Button
+        android:id="@+id/btnClose"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:text="X"
+        android:textColor="@color/blanco"
+        android:background="@drawable/circle_background"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Título del formulario -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre de tu receta:"
+        android:textColor="@color/blanco"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/btnClose"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Campo para el nombre de la receta -->
+    <EditText
+        android:id="@+id/etRecipeName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        android:padding="12dp"
+        android:background="@android:color/transparent"
+        android:textColor="@color/blanco"
+        android:textColorHint="#80FFFFFF"
+        android:hint="Escribe el nombre de tu receta"
+        android:maxLines="1"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Línea divisoria -->
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/blanco"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintTop_toBottomOf="@id/etRecipeName"/>
+
+    <!-- Título para ingredientes -->
+    <TextView
+        android:id="@+id/tvIngredientsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingredientes de tu receta:"
+        android:textColor="@color/blanco"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/divider1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- CardView para los ingredientes -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvIngredients"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/fondo_rosa"
+        app:layout_constraintTop_toBottomOf="@id/tvIngredientsTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <EditText
+                android:id="@+id/etIngredients"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="Escribe los ingredientes..."
+                android:textColorHint="#80FFFFFF"
+                android:textColor="@color/blanco"
+                android:gravity="top"
+                android:minLines="2"
+                android:maxLines="5"
+                android:inputType="textMultiLine"/>
+
+            <ImageButton
+                android:id="@+id/btnAddIngredient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_add"
+                android:background="@android:color/transparent"
+                app:tint="@color/darkRed"
+                android:contentDescription="Agregar ingrediente"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Título para pasos -->
+    <TextView
+        android:id="@+id/tvStepsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pasos para la receta:"
+        android:textColor="@color/blanco"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cvIngredients"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- CardView para los pasos -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvSteps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/fondo_rosa"
+        app:layout_constraintTop_toBottomOf="@id/tvStepsTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <EditText
+                android:id="@+id/etSteps"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="Escribe los pasos de tu receta..."
+                android:textColorHint="#80FFFFFF"
+                android:textColor="@color/blanco"
+                android:gravity="top"
+                android:minLines="3"
+                android:maxLines="8"
+                android:inputType="textMultiLine"/>
+
+            <ImageButton
+                android:id="@+id/btnAddStep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_add"
+                android:background="@android:color/transparent"
+                app:tint="@color/darkRed"
+                android:contentDescription="Agregar paso"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Sección para agregar foto -->
+    <TextView
+        android:id="@+id/tvPhotoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agrega un foto:"
+        android:textColor="@color/blanco"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cvSteps"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- CardView para la foto -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/fondo_rosa"
+        app:layout_constraintTop_toBottomOf="@id/tvPhotoTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/ivPhotoPlaceholder"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_menu_gallery"
+                app:tint="@color/darkRed" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Sección para agregar video -->
+    <TextView
+        android:id="@+id/tvVideoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agrega un video (Opcional):"
+        android:textColor="@color/blanco"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cvPhoto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- CardView para el video -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvVideo"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/fondo_rosa"
+        app:layout_constraintTop_toBottomOf="@id/tvVideoTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/ivVideoPlaceholder"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_menu_camera"
+                app:tint="@color/darkRed" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Botón para agregar receta -->
+    <Button
+        android:id="@+id/btnAddRecipeSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="agregar receta"
+        android:textColor="@color/darkRed"
+        android:backgroundTint="@color/fondo_rosa"
+        android:textAllCaps="false"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

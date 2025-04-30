@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Márgenes para pasos e ingredientes -->
+    <dimen name="step_margin_bottom">16dp</dimen>
+    <dimen name="ingredient_margin_bottom">8dp</dimen>
+</resources>

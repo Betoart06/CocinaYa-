@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/fondo_rosa">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buscar Receta"
+        android:textColor="@color/blanco"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Escribe el nombre de la receta"
+        android:textColorHint="#CCCCCC"
+        android:textColor="@color/blanco"
+        android:backgroundTint="@color/blanco"
+        android:inputType="text"
+        android:maxLines="1"
+        android:layout_marginBottom="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Cancelar"
+            android:textColor="@color/blanco"
+            android:backgroundTint="@color/darkRed"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Buscar"
+            android:textColor="@color/blanco"
+            android:backgroundTint="@color/darkRed"/>
+    </LinearLayout>
+
+    <!-- Sección de búsquedas recientes -->
+    <TextView
+        android:id="@+id/tvRecentSearches"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Búsquedas recientes"
+        android:textColor="@color/blanco"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout
+        android:id="@+id/recentSearchesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+</LinearLayout>
